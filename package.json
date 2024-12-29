@@ -3,9 +3,10 @@
   "displayName": "gn-format",
   "icon": "assets/icon.png",
   "description": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "Chemystery",
   "engines": {
-    "vscode": "^1.96.2"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
@@ -26,6 +27,17 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "GN Format Settings",
+      "properties": {
+        "gn-format.gnPath": {
+          "type": "string",
+          "default": "gn",
+          "description": "Path to the gn executable"
+        }
+      }
     }
   },
   "scripts": {
@@ -35,10 +47,11 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test",
-    "publish": "vsce package"
+    "local publish": "vsce package",
+    "publish to market": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.96.2",
+    "@types/vscode": "^1.96.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
